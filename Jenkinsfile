@@ -24,13 +24,13 @@ pipeline{
         }
         stage('Build and tag'){
             steps{
-                sh 'docker build -t manjukolkar007/project-1 .'
+                sh 'docker build -t thilakkumar205/project-1 .'
             }
         }
         stage('Containerisation'){
             steps{
                 sh '''
-                docker run -it -d --name c181101 -p 9003:8080 manjukolkar007/project-1
+                docker run -it -d --name c181101 -p 9003:8080 thilakkumar205/project-1
                 '''
             }
         }
@@ -45,7 +45,7 @@ pipeline{
         }
          stage('Pushing image to repository'){
             steps{
-                sh 'docker push manjukolkar007/project-1'
+                sh 'docker push thilakkumar205/project-1'
             }
         }
         
